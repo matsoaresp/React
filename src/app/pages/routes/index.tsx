@@ -1,6 +1,6 @@
 
 import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
-import { Dashboard } from "../app/pages";
+import { Dashboard } from "..";
 
 export const Router = () => {
     return (

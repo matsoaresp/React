@@ -1,4 +1,4 @@
-import { Router } from "./routes";
+import { Router } from "./pages/routes";
 
 export const App =() => {
   return (
