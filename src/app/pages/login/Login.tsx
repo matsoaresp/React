@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, useEffect } from "react";
 
 export const Login = () => {
 
@@ -17,16 +17,6 @@ export const Login = () => {
     }, [email, password]);
 
 
-    useEffect (() =>{
-
-        if (window.confirm("Você é homem?")){
-            console.log("Homem")
-        }else {
-            console.log("Mulher")
-        }
-     }, []);
-
-
      useEffect (() =>{
 
         console.log(email)
@@ -34,13 +24,7 @@ export const Login = () => {
        
      }, [email ,password]);
     
-    const handleEntrar = () => {
-
-        console.log(email)
-        console.log(password)
-
-
-    }
+   
     return (
         <div>
             <form>
