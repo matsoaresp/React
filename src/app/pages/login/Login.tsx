@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState, useEffect } from "react";
-import { InputLogin } from "./components/inputLogin";
+import { InputLogin } from "./components/InputLogin";
 
 export const Login = () => {
 
