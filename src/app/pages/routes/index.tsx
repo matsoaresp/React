@@ -10,6 +10,7 @@ export const Router = () => {
 
                 <Route path="/entrar" component={Dashboard} />
                 <Route path="/pagina-inicial" component={Login} />
+                <Route path="*" component={() => <Redirect to="/entrar" />} />
                 <Route path="*" component={() => <Redirect to="/pagina-inicial" />} />
 
             </Switch>
