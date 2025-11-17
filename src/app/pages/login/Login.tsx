@@ -1,29 +1,57 @@
-import { useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 export const Login = () => {
 
-    const [password, setPassword] = useState ('');
+    const inputPasswordRef = useRef<HTMLInputElement>(null);
+    
+    const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
-    const handleEntrar = () => {
+    const emailLength = useMemo(() => {
+        return email.length;
+    }, [email]);
 
-        console.log(email)
-        console.log(password)
-    }
+    const handleEntrar = useCallback(() => {
+        console.log(email);
+        console.log(password);
+    }, [email, password]);
+
     return (
         <div>
             <form>
+                <label>
+                    <p>Quantidade de caracteres: {emailLength}</p>
+                    <span>Email</span>
+                    <input
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        onKeyDown={e => {
+                            if (e.key === "Enter") {
+                                e.preventDefault(); 
+                                inputPasswordRef.current?.focus();
+                            }
+                        }}
+                    />
+                </label>
 
                 <label>
-                    <span>Email</span>
-                    <input value = {email} onChange={e => setEmail(e.target.value)}></input>
-                </label>
-                 <label>
                     <span>Senha</span>
-                    <input value = {password} onChange={e => setPassword(e.target.value)} type="password"></input>
+                    <input
+                        ref={inputPasswordRef}
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        type="password"
+                        onKeyDown={e => {
+                            if (e.key === "Enter") {
+                                e.preventDefault();
+                                handleEntrar(); 
+                            }
+                        }}
+                    />
                 </label>
+
                 <button type="button" onClick={handleEntrar}>Entrar</button>
             </form>
         </div>
     );
-}
+};
