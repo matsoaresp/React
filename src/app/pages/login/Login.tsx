@@ -36,13 +36,12 @@ export const Login = () => {
                     onChange={setEmail}
                     onEnter={() => inputPasswordRef.current?.focus()}
                 />
-
-
                <InputLogin
-                    label="Sennha"
+                    label="Senha"
+                    type = "password"
                     value={password}
                     onChange={setPassword}
-               
+                    ref = {inputPasswordRef}
                />
                 <button type="button" onClick={handleEntrar}>Entrar</button>
             </form>
