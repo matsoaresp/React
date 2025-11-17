@@ -16,6 +16,31 @@ export const Login = () => {
         console.log(password);
     }, [email, password]);
 
+
+    useEffect (() =>{
+
+        if (window.confirm("Você é homem?")){
+            console.log("Homem")
+        }else {
+            console.log("Mulher")
+        }
+     }, []);
+
+
+     useEffect (() =>{
+
+        console.log(email)
+        console.log(password)
+       
+     }, [email ,password]);
+    
+    const handleEntrar = () => {
+
+        console.log(email)
+        console.log(password)
+
+
+    }
     return (
         <div>
             <form>
