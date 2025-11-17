@@ -3,7 +3,7 @@ export const Dashboard = () => {
     return (
         <div>
             <p>Dashboard</p>
-            <Link to="/entrar">Login</Link>
+            <Link to="/pagina-inicial">Login</Link>
         </div>
 
     );
