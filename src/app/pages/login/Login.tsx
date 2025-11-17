@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState, useEffect } from "react";
 
 export const Login = () => {
 
@@ -16,6 +16,17 @@ export const Login = () => {
         console.log(password);
     }, [email, password]);
 
+
+
+
+     useEffect (() =>{
+
+        console.log(email)
+        console.log(password)
+       
+     }, [email ,password]);
+    
+   
     return (
         <div>
             <form>
