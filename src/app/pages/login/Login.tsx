@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useRef, useState, useEffect } from "react";
 import { InputLogin } from "./components/InputLogin";
+import {Link} from 'react-router-dom'
 
 export const Login = () => {
 
@@ -15,13 +16,11 @@ export const Login = () => {
         console.log(password);
     }, [email, password]);
 
-
-
-
      useEffect (() =>{
 
-        console.log(email)
-        console.log(password)
+        console.clear(); 
+        console.log("Email",email)
+        console.log("Senha", password)
        
      }, [email ,password]);
     
@@ -43,7 +42,7 @@ export const Login = () => {
                     onChange={setPassword}
                     ref = {inputPasswordRef}
                />
-                <button type="button" onClick={handleEntrar}>Entrar</button>
+                <Link to="/entrar" onClick={handleEntrar}>Entrar</Link>
             </form>
         </div>
     );
