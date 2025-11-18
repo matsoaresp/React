@@ -11,14 +11,14 @@ interface IInputLoginProps {
 
 export const InputLogin = forwardRef<HTMLInputElement, IInputLoginProps>((props, ref) => {
   return (
-    <label>
+    <label className="gap-2 flex flex-col w-full ">
       {props.emailLength !== undefined && (
-        <p>Quantidade de caracteres: {props.emailLength}</p>
+        <p  >Quantidade de caracteres: {props.emailLength}</p>
       )}
 
-      <span>{props.label}</span>
+      <span className="font-medium" >{props.label}</span>
 
-      <input
+      <input className="border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         ref={ref}
         value={props.value}
         type={props.type}

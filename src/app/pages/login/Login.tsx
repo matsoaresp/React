@@ -27,8 +27,8 @@ export const Login = () => {
     
    
     return (
-        <div>
-            <form>
+        <section className="flex justify-center items-center h-screen">
+            <form className="flex flex-col border border-blue-500 p-4 rounded border-4">
                 <InputLogin
                     label="Email"
                     value={email}
@@ -45,6 +45,6 @@ export const Login = () => {
                />
                 <button type="button" onClick={handleEntrar}>Entrar</button>
             </form>
-        </div>
+        </section>
     );
 };
