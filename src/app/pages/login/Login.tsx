@@ -2,6 +2,7 @@ import { useCallback, useMemo, useRef, useState, useEffect } from "react";
 import { InputLogin } from "./components/InputLogin";
 import { useHistory } from "react-router-dom";
 
+import {Link} from 'react-router-dom'
 
 export const Login = () => {
 
@@ -34,10 +35,7 @@ export const Login = () => {
         console.log(email);
         console.log(password);
     }, [email, password]);
-
-
-
-   
+  
     return (
         <section className="flex justify-center items-center h-screen">
             <form className="flex flex-col shadow-xl shadow-black/20 p-4 rounded border-2">
@@ -55,7 +53,7 @@ export const Login = () => {
                     onChange={setPassword}
                     ref = {inputPasswordRef}
                />
-                <button type="button" onClick={handleEntrar}>Entrar</button>
+                <Link to="/entrar" onClick={handleEntrar}>Entrar</Link>
             </form>
         </section>
     );
