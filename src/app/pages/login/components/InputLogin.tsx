@@ -13,7 +13,7 @@ export const InputLogin = forwardRef<HTMLInputElement, IInputLoginProps>((props,
   return (
     <label className="gap-2 flex flex-col w-full ">
       {props.emailLength !== undefined && (
-        <p  >Quantidade de caracteres: {props.emailLength}</p>
+        <p>Quantidade de caracteres: {props.emailLength}</p>
       )}
 
       <span className="font-medium" >{props.label}</span>
