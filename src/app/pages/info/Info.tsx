@@ -29,11 +29,14 @@ export const Info = () => {
             alert("Preencha o campo Cargo")
             return
         }
-        if (telefone.length <= 12){
-            alert("O campo telefone deve ter no máximo 12 números")
+
+        console.log("Telefone:", telefone);
+        console.log("Tamanho:", telefone.length);
+        if (telefone.length < 10 || telefone.length > 11){
+            alert("O campo telefone deve ter no máximo 11 números")
             return
         }
-        if (cidade.trim()){
+        if (!cidade.trim()){
             alert("Preencha o campo cidade ")
             return 
         }
@@ -72,7 +75,7 @@ export const Info = () => {
 
                 <InfoUser
                 label = "Telefone"
-                type = "number"
+                type = "string"
                 value={telefone}
                 onChange={setTelefone}
                 onEnter={() => inputCidadeRef.current?.focus()}

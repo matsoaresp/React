@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 interface UserData {
   name: string;
   position: string;
-  telefone: number;
+  telefone: string;
   cidade: string;
 }
 
