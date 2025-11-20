@@ -19,6 +19,25 @@ export const Info = () => {
     const [cidade, setCidade] = useState('');
 
    const handleConfirm = useCallback(() => {
+
+
+        if (!name.trim()){
+            alert("Preencha o campo nome")
+            return
+        }
+        if(!position.trim()){
+            alert("Preencha o campo Cargo")
+            return
+        }
+        if (telefone.length <= 12){
+            alert("O campo telefone deve ter no máximo 12 números")
+            return
+        }
+        if (cidade.trim()){
+            alert("Preencha o campo cidade ")
+            return 
+        }
+
         history.push('/exibir', {
             name,
             position,
