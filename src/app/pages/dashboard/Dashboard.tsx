@@ -10,8 +10,9 @@ export const Dashboard = () => {
     const history = useHistory();
     const usuarioLogadoContext = useContext(UsuarioLogadoContext);
 
-    const {nomeDoUsuario,logout} = useUsuarioLogado(); 
-
+    
+    const {nomeUsuario,logout} = useUsuarioLogado(); 
+    
     if (counterRef.current.counter < 0) {
         counterRef.current.counter = 0
     }
@@ -44,7 +45,12 @@ export const Dashboard = () => {
                     type="button" 
                     onClick={handleEntrar}
                 >
+
                     Entrar
+                </button>
+
+                <button className='bg-red-500 text-white px-4 py-2 rounded mt-6 '  onClick={logout}>Logout
+                    
                 </button>
             </div>
         </section>
